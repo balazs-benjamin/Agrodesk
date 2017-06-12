@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="org.aqins.agrodesk.AgrocoeurActivity$PlaceholderFragment">
+
+
+    <EditText
+        android:id="@+id/etNumberofVolun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/qltVoltField"
+        android:layout_below="@+id/qltVoltField"
+        android:layout_marginTop="14dp"
+        android:layout_toEndOf="@+id/editText5"
+        android:height="30dp"
+        android:autoText="false"
+        android:background="@drawable/input_outline"
+        android:ems="10"
+        android:hint="1"
+        android:inputType="numberSigned" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:layout_below="@+id/qltVoltField"
+        android:id="@+id/editText5"
+        android:text="@string/editText5"
+        android:textColor="?attr/colorPrimary"
+        android:textAlignment="center"
+        android:layout_alignStart="@+id/titlePrjtField" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/titlePrjtField"
+        android:background="@drawable/input_outline"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="15dp"
+        android:hint="@string/titlePrjtField"
+        android:singleLine="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/qltVoltField"
+        android:background="@drawable/input_outline"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="15dp"
+        android:singleLine="true"
+        android:layout_marginTop="15dp"
+        android:hint="@string/qltVoltField"
+        android:layout_below="@+id/titlePrjtField"
+        android:layout_alignParentStart="true"
+        android:inputType="textMultiLine" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/nbrVoltField"
+        android:text="@string/nbrVoltField"
+        android:textColor="?attr/colorPrimary"
+        android:textAlignment="center"
+        android:layout_below="@+id/editText5"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:background="@drawable/input_outline"
+        android:id="@+id/actVol1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="15dp"
+        android:hint="@string/actVol1"
+        android:layout_below="@+id/nbrVoltField"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:background="@drawable/input_outline"
+        android:id="@+id/actVol2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="15dp"
+        android:hint="@string/actVol2"
+        android:layout_below="@+id/nbrVoltField"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="59dp" />
+
+
+</RelativeLayout>

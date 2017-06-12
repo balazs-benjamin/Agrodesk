@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Agrodesk</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="country_prompt" translatable="false">Country....</string>
+    <string name="datePlace_select" translatable="false">The meeting place corresponds to the site of the activities?</string>
+    <string name="date_prompt" translatable="false">Date of operation ...</string>
+    <string name="sportulePay_select" translatable="false">Support the commitment of the volunteers involved with you:</string>
+    <string name="title_activity_agrocoeur" translatable="false">Agrodesk\'s Fair</string>
+    <string name="editText5" translatable="false">Number of volunteers requested:</string>
+    <string name="titlePrjtField" translatable="false">Project\'s name or farm\'s name</string>
+    <string name="qltVoltField" translatable="false">Qualifications or quality of required volunteers:</string>
+    <string name="nbrVoltField" translatable="false">Activities to be executed by volunteers</string>
+    <string name="actVol1" translatable="false">Activity N°1</string>
+    <string name="actVol2" translatable="false">Activity N°2</string>
+    <string name="descPlace" translatable="false">More description of meeting place...</string>
+    <string name="radioButton7" translatable="false">Yes</string>
+    <string name="radioButton6" translatable="false">No</string>
+    <string name="editText2" translatable="false">Info: AgroCoeur volunteers are not formal workers and can not be paid in this capacity; Nevertheless, in order to put the sharing in the heart of the human activities as recommended by our platform, we strongly encourage you to give a gratuity to any volunteer who would engage you for activities. Your donation or sportule can be sold either in good product (food) or in cash. Thank you</string>
+    <string name="radioButton" translatable="false">Cash</string>
+    <string name="radioButton2" translatable="false">Gifts of food or goods produced</string>
+    <string name="sportuleLocation" translatable="false">State/ City/ Square...</string>
+    <string name="sportuleField" translatable="false">Quality and quantity of donations by volunteer ...</string>
+    <string name="button3" translatable="false">Pay by google</string>
+    <string name="UssdDial" translatable="false">Pay by Mobile USSD</string>
+    <string name="kermesseSubmitBtn" translatable="false">Initiate Fair</string>
+</resources>

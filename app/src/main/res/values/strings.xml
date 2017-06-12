@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Agrodesk</string>
+    <string name="title_activity_agrocoeur" translatable="false">Kermesse Agrocoeur</string>
+    <string name="action_settings">Réglages</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="country_prompt" translatable="false">Pays...</string>
+
+    <string name="date_prompt" translatable="false">Date de déroulement...</string>
+
+    <string name="sportulePay_select" translatable="false">Soutenez l\'engagement des volontaires engagés à vos côtés:</string>
+
+    <string name="datePlace_select" translatable="false">Le lieu de rendez-vous correspond au site des activités?</string>
+
+    <string name="editText5" translatable="false">Nbre de volontaires sollicités</string>
+
+    <string name="titlePrjtField" translatable="false">Nom du projet ou de la ferme-projet:</string>
+
+    <string name="qltVoltField" translatable="false"> Qualifications ou qualité de volontaires souhaités:</string>
+
+
+    <string name="nbrVoltField" translatable="false"> Activités à exécuter par les volontaires:</string>
+
+    <string name="actVol1">Activité N°1</string>
+
+    <string name="actVol2">Activité N°2</string>
+
+    <string name="descPlace" translatable="false">Indiquez lieu de rendez-vous...</string>
+
+
+    <string name="sportuleLocation" translatable="false">Ville/ Région/ Commune...</string>
+
+
+    <string name="radioButton7">Oui</string>
+
+    <string name="radioButton6">Non</string>
+
+
+    <string name="editText2" translatable="false">Info: Les volontaires AgroCoeur ne sont pas des travailleurs formels et ne peuvent être rénumérés en cette qualité; Néanmoins afin de remettre le partage au coeur des activités humaines comme le préconise notre plateforme, nous vous encourageons fortement à donner une gratification à tout volontaire qui  Votre don ou sportule peut-être soldé soit en bien produit (vivres) ou en numéraire. Merci</string>
+
+
+    <string name="radioButton" translatable="false">Numéraire</string>
+
+
+    <string name="radioButton2" translatable="false">Dons de vivres ou biens produits</string>
+
+
+    <string name="button3">Payer par Google</string>
+
+    <string name="UssdDial">Payer par Mobile USSD</string>
+
+    <string name="kermesseSubmitBtn" translatable="false">Initier Kermesse</string>
+
+
+    <string name="sportuleField" translatable="false">Qualité et quantités des dons par volontaire...</string>
+
+</resources>

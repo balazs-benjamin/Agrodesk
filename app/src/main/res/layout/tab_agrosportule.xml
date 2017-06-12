@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/UssdDial"
+        android:id="@+id/UssdDial"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/sportuleField"
+        android:layout_alignEnd="@+id/sportuleField" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="12sp"
+        android:hint="@string/editText2"
+        android:selectAllOnFocus="false"
+        android:background="#fce2ae"
+        android:textAlignment="inherit"
+        android:foregroundTint="?android:attr/colorButtonNormal"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+
+        android:id="@+id/radioGroup"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentEnd="true">
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/button3"
+            android:layout_below="@+id/textView"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="21dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="@string/radioButton"
+            android:textSize="18sp"
+            android:typeface="normal" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/button3"
+            android:layout_below="@+id/textView"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="22dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="@string/radioButton2"
+            android:textSize="18sp" />
+
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/sportuleField"
+        android:background="@drawable/input_outline"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="15dp"
+        android:hint="@string/sportuleField"
+        android:singleLine="true"
+        android:textSize="18sp"
+        android:layout_below="@+id/radioGroup"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:layout_below="@+id/sportuleField"
+        android:layout_alignStart="@+id/sportuleField" />
+
+    <TextView
+        android:text="@string/sportulePay_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:padding="15dp"
+        android:clickable="true"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginLeft="20dp"
+        android:textSize="18sp"
+        android:layout_below="@+id/editText2"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/kermesseSubmitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:id="@+id/kermesseSubmitBtn"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/button3"
+        android:layout_marginTop="20dp"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+
+</RelativeLayout>

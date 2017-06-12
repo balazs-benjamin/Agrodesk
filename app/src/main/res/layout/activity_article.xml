@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_article"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.aqins.agrodesk.ArticleActivity">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:layout_below="@+id/sportuleField"
+        android:background="@drawable/input_outline"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/descField"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="15dp"
+        android:hint="Ecrire..." />
+
+    <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_submit_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_insert_photo_white_24dp"/>
+
+    <Button
+        android:text="Publier article"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:id="@+id/submitBtn"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/descField"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="96dp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "863783513422",
+    "firebase_url": "https://agrodesk-b30ff.firebaseio.com",
+    "project_id": "agrodesk-b30ff",
+    "storage_bucket": "agrodesk-b30ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863783513422:android:0c0e2e1c31e1b894",
+        "android_client_info": {
+          "package_name": "org.aqins.agrodesk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "863783513422-84173htpiiuakhbogdjcn0h6qu7hpdm4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.aqins.agrodesk",
+            "certificate_hash": "1896A98D670A2040F98A76F34AC222543EB52D2F"
+          }
+        },
+        {
+          "client_id": "863783513422-lp4ju0b7gnh00e21lfabg6oflf9uucth.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIbnWLg3Q9DY61qmbo1mfXxXRdIPsRURs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "863783513422-lp4ju0b7gnh00e21lfabg6oflf9uucth.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
