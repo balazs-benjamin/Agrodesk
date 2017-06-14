@@ -58,6 +58,11 @@ public class TabAgrocadre extends Fragment implements DatePickerDialog.OnDateSet
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.tab_agrocadre, container,
                 false);
+        EditText etDesc = (EditText) rootView.findViewById(R.id.descPlace) ;
+        EditText etCity = (EditText) rootView.findViewById(R.id.sportuleField);
+        RadioGroup radioGroup = (RadioGroup) rootView.findViewById(R.id.radioGroup);
+        selectDate = (TextView)rootView.findViewById(R.id.SelectDate); // getting the image button in fragment_blank.xml
+        dateToActivate = (TextView) rootView.findViewById(R.id.selectedDate); // getting the TextView in fragment_blank.xml
 
         sharedPreferences = getActivity().getSharedPreferences("org.aqins.agrodesk", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -68,6 +73,21 @@ public class TabAgrocadre extends Fragment implements DatePickerDialog.OnDateSet
         list.add("Cameroun");
         list.add("Togo");
         list.add("Ghana");
+
+        if(sharedPreferences.contains("country"))
+            selectDate.setText(sharedPreferences.getString("country", ""));
+        if(sharedPreferences.contains("meeting_city"))
+            etCity.setText(sharedPreferences.getString("meeting_city", ""));
+        if(sharedPreferences.contains("meeting_place")) {
+            if(sharedPreferences.getString("meeting_place", "").equals("yes"))
+                radioGroup.check(R.id.radioButton7);
+            else
+                radioGroup.check(R.id.radioButton6);
+        }
+        if(sharedPreferences.contains("meeting_desc"))
+            etDesc.setText(sharedPreferences.getString("meeting_desc", ""));
+        if(sharedPreferences.contains("meeting_date"))
+            dateToActivate.setText(sharedPreferences.getString("meeting_date", ""));
 
         final Spinner s = (Spinner) rootView.findViewById(R.id.spinner);
 
@@ -91,8 +111,6 @@ public class TabAgrocadre extends Fragment implements DatePickerDialog.OnDateSet
             }
         });
 
-        selectDate = (TextView)rootView.findViewById(R.id.SelectDate); // getting the image button in fragment_blank.xml
-        dateToActivate = (TextView) rootView.findViewById(R.id.selectedDate); // getting the TextView in fragment_blank.xml
         selectDate.setOnClickListener(new View.OnClickListener() {  // setting listener for user click event
             @Override
             public void onClick(View v) {
@@ -112,8 +130,11 @@ public class TabAgrocadre extends Fragment implements DatePickerDialog.OnDateSet
             }
         });
 
-        EditText etDesc = (EditText) rootView.findViewById(R.id.descPlace) ;
-        EditText etCity = (EditText) rootView.findViewById(R.id.sportuleField);
+        editor.putString("meeting_place", "no");
+        editor.commit();
+
+        editor.putString("country", "Bénin");
+        editor.commit();
 
         etCity.addTextChangedListener(new TextWatcher() {
             @Override
@@ -150,8 +171,6 @@ public class TabAgrocadre extends Fragment implements DatePickerDialog.OnDateSet
 
             }
         });
-
-        RadioGroup radioGroup = (RadioGroup) rootView.findViewById(R.id.radioGroup);
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {

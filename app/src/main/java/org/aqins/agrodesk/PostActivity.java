@@ -27,9 +27,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.sql.Time;
-import java.util.Date;
-
 public class PostActivity extends AppCompatActivity {
 
     private ImageButton mSelectImage;

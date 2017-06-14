@@ -29,14 +29,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
-
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BlogSingleActivity extends AppCompatActivity implements View.OnClickListener {
-    private static final String TAG = "BlogSingleActivity";
+public class FairSingleActivity extends AppCompatActivity  implements View.OnClickListener {
+    private static final String TAG = "FairSingleActivity";
 
 
     private String mPost_key = null;
@@ -50,10 +49,6 @@ public class BlogSingleActivity extends AppCompatActivity implements View.OnClic
 
     private DatabaseReference mPostReference;
 
-    private ImageView mBlogSingleImage;
-    private TextView mBlogSingleTitle;
-    private TextView mBlogSingleDesc;
-
     private EditText mCommentField;
     private Button mCommentButton;
     private RecyclerView mCommentsRecycler;
@@ -61,12 +56,14 @@ public class BlogSingleActivity extends AppCompatActivity implements View.OnClic
     private FirebaseAuth mAuth;
     private ImageButton mSingleRemoveBtn;
 
+    TextView tvPrjName, tvQualification, tvNumVolun, tvActivity1, tvActivity2, tvCountry, tvCity, tvDate, tvDesc, tvPlace;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_blog_single);
+        setContentView(R.layout.activity_fair_single);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Blog");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Fair");
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -74,9 +71,17 @@ public class BlogSingleActivity extends AppCompatActivity implements View.OnClic
         mCommentsReference = FirebaseDatabase.getInstance().getReference()
                 .child("post-comments").child(mPost_key);
 
+        tvPrjName = (TextView) findViewById(R.id.project_name);
+        tvQualification = (TextView) findViewById(R.id.qualification);
+        tvNumVolun = (TextView) findViewById(R.id.numVolun);
+        tvActivity1 = (TextView) findViewById(R.id.activity1);
+        tvActivity2 = (TextView) findViewById(R.id.activity2);
+        tvCountry = (TextView) findViewById(R.id.country);
+        tvCity = (TextView) findViewById(R.id.city);
+        tvDate = (TextView) findViewById(R.id.date);
+        tvDesc = (TextView) findViewById(R.id.desc);
+        tvPlace = (TextView) findViewById(R.id.place);
 
-        mBlogSingleDesc = (TextView) findViewById(R.id.singleBlogDesc);
-        mBlogSingleImage = (ImageView) findViewById(R.id.singleBlogImage);
         mCommentField = (EditText) findViewById(R.id.field_comment_text);
         mCommentButton = (Button) findViewById(R.id.button_post_comment);
         mCommentsRecycler = (RecyclerView) findViewById(R.id.recycler_comments);
@@ -84,26 +89,18 @@ public class BlogSingleActivity extends AppCompatActivity implements View.OnClic
         mCommentButton.setOnClickListener(this);
         mCommentsRecycler.setLayoutManager(new LinearLayoutManager(this));
 
-
-
-
-        mBlogSingleTitle = (TextView) findViewById(R.id.singleBlogTitle);
-
-        if(mBlogSingleTitle != null)
-        {
-            mBlogSingleTitle.setVisibility(View.VISIBLE);
-        }
-        else
-        {
-            mBlogSingleTitle.setVisibility(View.GONE);
-        }
-
         mSingleRemoveBtn = (ImageButton) findViewById(R.id.singleRemoveBtn);
 
         mPostReference = FirebaseDatabase.getInstance().getReference()
-                .child("Blog").child(mPost_key);
+                .child("Fair").child(mPost_key);
+    }
 
-
+    @Override
+    public void onClick(View v) {
+        int i = v.getId();
+        if (i == R.id.button_post_comment) {
+            postComment();
+        }
     }
 
     @Override
@@ -117,21 +114,33 @@ public class BlogSingleActivity extends AppCompatActivity implements View.OnClic
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                String post_title = (String) dataSnapshot.child("title").getValue();
-                String post_desc = (String) dataSnapshot.child("desc").getValue();
-                String post_image = (String) dataSnapshot.child("image").getValue();
+                String projName = (String) dataSnapshot.child("projName").getValue();
+                String quality = (String) dataSnapshot.child("quality").getValue();
+                String activity1 = (String) dataSnapshot.child("activity1").getValue();
+                String activity2 = (String) dataSnapshot.child("activity2").getValue();
+                String num_volun = (String) dataSnapshot.child("num_volun").getValue();
+                String country = (String) dataSnapshot.child("country").getValue();
+                String meeting_city = (String) dataSnapshot.child("meeting_city").getValue();
+                String meeting_desc = (String) dataSnapshot.child("meeting_desc").getValue();
+                String meeting_place = (String) dataSnapshot.child("meeting_place").getValue();
+                String meeting_date = (String) dataSnapshot.child("meeting_date").getValue();
+
                 String post_uid = (String) dataSnapshot.child("uid").getValue();
 
-
-                mBlogSingleTitle.setText(post_title);
-                mBlogSingleDesc.setText(post_desc);
-
-                Picasso.with(BlogSingleActivity.this).load(post_image).into(mBlogSingleImage);
-
+                tvPrjName.setText(projName);
+                tvQualification.setText(quality);
+                tvNumVolun.setText(num_volun);
+                tvActivity1.setText(activity1);
+                tvActivity2.setText(activity2);
+                tvCountry.setText(country);
+                tvCity.setText(meeting_city);
+                tvDate.setText(meeting_date);
+                tvDesc.setText(meeting_desc);
+                tvPlace.setText(meeting_place);
 
                 if (mAuth.getCurrentUser().getUid().equals(post_uid)) {
 
-                    Toast.makeText(BlogSingleActivity.this, mAuth.getCurrentUser().getUid(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(FairSingleActivity.this, mAuth.getCurrentUser().getUid(), Toast.LENGTH_LONG).show();
                     mSingleRemoveBtn.setVisibility(View.VISIBLE);
 
                 }
@@ -152,7 +161,7 @@ public class BlogSingleActivity extends AppCompatActivity implements View.OnClic
         mSingleRemoveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new AlertDialog.Builder(BlogSingleActivity.this)
+                new AlertDialog.Builder(FairSingleActivity.this)
                         .setIcon(R.drawable.ic_warning_white_24dp)
                         .setTitle("Attention!")
                         .setMessage("Cette publication sera supprimée. " +
@@ -161,9 +170,7 @@ public class BlogSingleActivity extends AppCompatActivity implements View.OnClic
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 mDatabase.child(mPost_key).removeValue();
-                                Intent mainIntent = new Intent(BlogSingleActivity.this, MainActivity.class);
-                                startActivity(mainIntent);
-
+                                finish();
                             }
                         })
                         .setNegativeButton("Non", null)
@@ -180,6 +187,7 @@ public class BlogSingleActivity extends AppCompatActivity implements View.OnClic
 
     }
 
+
     @Override
     public void onStop() {
         super.onStop();
@@ -191,15 +199,6 @@ public class BlogSingleActivity extends AppCompatActivity implements View.OnClic
 
         // Clean up comments listener
         mAdapter.cleanupListener();
-    }
-
-
-    @Override
-    public void onClick(View v) {
-        int i = v.getId();
-        if (i == R.id.button_post_comment) {
-            postComment();
-        }
     }
 
     private void postComment() {
@@ -382,13 +381,4 @@ public class BlogSingleActivity extends AppCompatActivity implements View.OnClic
         }
 
     }
-
-
-
-
-
-
-
-
-
 }

@@ -9,19 +9,20 @@
     <!--Use your own image here-->
 
     <EditText
+        android:id="@+id/descPlace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:background="@drawable/input_outline"
-        android:id="@+id/descPlace"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/SelectDate"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:padding="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/input_outline"
+        android:ems="10"
         android:hint="@string/descPlace"
-        android:layout_below="@+id/SelectDate"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="15dp" />
+        android:imeOptions="actionNext"
+        android:inputType="textMultiLine"
+        android:padding="15dp" />
 
 
     <TextView
@@ -39,19 +40,20 @@
         android:layout_marginTop="19dp" />
 
     <EditText
+        android:id="@+id/sportuleField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/sportuleField"
-        android:background="@drawable/input_outline"
+        android:layout_alignStart="@+id/descPlace"
+        android:layout_below="@+id/textView2"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:padding="15dp"
+        android:background="@drawable/input_outline"
+        android:ems="10"
         android:hint="@string/sportuleLocation"
-        android:singleLine="true"
-        android:layout_below="@+id/textView2"
-        android:layout_alignStart="@+id/descPlace" />
+        android:imeOptions="actionNext"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:singleLine="true" />
 
     <TextView
         android:id="@+id/selectedDate"

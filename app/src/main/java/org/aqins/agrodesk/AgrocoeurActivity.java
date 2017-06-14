@@ -99,12 +99,6 @@ public class AgrocoeurActivity extends AppCompatActivity {
      * A placeholder fragment containing a simple view.
      */
     public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-        private Spinner countriesSpinner;
         private SharedPreferences sharedPreferences;
         private SharedPreferences.Editor editor;
 
@@ -115,11 +109,8 @@ public class AgrocoeurActivity extends AppCompatActivity {
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
+        public static PlaceholderFragment newInstance() {
             PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
             return fragment;
         }
 
@@ -137,6 +128,16 @@ public class AgrocoeurActivity extends AppCompatActivity {
             sharedPreferences = getActivity().getSharedPreferences("org.aqins.agrodesk", Context.MODE_PRIVATE);
             editor = sharedPreferences.edit();
 
+            if(sharedPreferences.contains("projName"))
+                etProjName.setText(sharedPreferences.getString("projName", ""));
+            if(sharedPreferences.contains("quality"))
+                etQuality.setText(sharedPreferences.getString("quality", ""));
+            if(sharedPreferences.contains("num_volun"))
+                etNumerofVolunteers.setText(sharedPreferences.getString("num_volun", ""));
+            if(sharedPreferences.contains("activity1"))
+                etActivityName1.setText(sharedPreferences.getString("activity1", ""));
+            if(sharedPreferences.contains("activity2"))
+                etActivityName2.setText(sharedPreferences.getString("activity2", ""));
             etProjName.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -250,7 +251,7 @@ public class AgrocoeurActivity extends AppCompatActivity {
           //  return PlaceholderFragment.newInstance(position + 1);
 
             switch(position){
-                case 0 : return PlaceholderFragment.newInstance(position + 1);
+                case 0 : return PlaceholderFragment.newInstance();
                 case 1 : return  TabAgrocadre.newInstance();
                 case 2 : return  TabAgrosportule.newInstance();
 
